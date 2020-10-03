@@ -4,10 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    <div class="teste"></div>
-    <div class="features"></div>
-    <div>Funcionou</div>
+    <table class="table">
+        <thead>
+            <th class="th">Símbolo</th>
+            <th class="th">O que representa</th>
+            <th class="th">Code..</th>
+            <th class="th">Resultado</th>
+        </thead>
+        <tbody>
+            <td class="td">^</td>
+            <td class="td">`Posição do começo da linha`</td>
+            <td class="td" onclick="returnTh('oi')">Código</td>
+            <td class="td">"sei lá</td>
+        </tbody>
+    </table>
 </body>
 </html>
+
+<script>
+    function returnContent()
+    {
+        console.log("Entrou aqui !");
+        return document.write(`<div>Essa é uma div dentro da outra</div>`);
+    }
+    function Ths()
+    {
+        const contentOptions = ["Símbolo", "Símbolo", "Símbolo", "Símbolo"];
+        for (let iterator = 0; iterator < contentOptions.length; iterator++) {
+            returnTh(contentOptions[iterator])
+        }
+    }
+    function head()
+    {
+        const head = 
+        `<head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Segundo Documento</title>
+            <link rel="stylesheet" type="text/css" href="style.css" />
+        </head>`;
+
+        return head;
+    }
+    function returnTh(contentTh)
+    {
+        const variableHead = head();
+        return document.write(
+        variableHead+    
+        `<table class="table">
+            <thead>
+                <th class="th">`+contentTh+`</th>
+                <th>`+contentTh+`</th>
+                <th>`+contentTh+`</th>
+            </thead>
+        </table>`
+        );
+    }
+    
+</script>
