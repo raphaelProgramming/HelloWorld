@@ -81,21 +81,30 @@
 
     function tbody()
     {
-        const variableTd = td();
+        //const variableTd = td();
         const tbody = 
         `<tbody>`+
-            td() +
+            generateTds() +
         `</tbody>`;
 
         return tbody;
     }
-
-    function td()
+    function generateTds()
     {
-        let td = `<td class="td">interessante</td>`;
-        const example = `<td class="td">interessante2</td>`;
-        td += example;
-        return td;
+        const contentTds = ['primeiro td','segundo td', 'terceiro td']; 
+        let Tds = ``;
+
+        return td(Tds, contentTds, contentTds.length);
+    }
+    
+    function td(Tds, contentTds, length)
+    {
+        Tds +=`<td class="td">`+contentTds[contentTds.length-length]+`</td>`;
+        
+        if(length == 1) return Tds;
+        
+        return td(Tds, contentTds, length-1);
+
     }
 
     function footer()
