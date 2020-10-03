@@ -17,7 +17,7 @@
         <tbody>
             <td class="td">^</td>
             <td class="td">`Posição do começo da linha`</td>
-            <td class="td" onclick="returnTh('oi')">Código</td>
+            <td class="td" onclick="returnTh('coloque isso')">Código</td>
             <td class="td">"sei lá</td>
         </tbody>
     </table>
@@ -25,18 +25,12 @@
 </html>
 
 <script>
-    function returnContent()
+    function ExampleDOM()
     {
-        console.log("Entrou aqui !");
+        //Exemplo
         return document.write(`<div>Essa é uma div dentro da outra</div>`);
     }
-    function Ths()
-    {
-        const contentOptions = ["Símbolo", "Símbolo", "Símbolo", "Símbolo"];
-        for (let iterator = 0; iterator < contentOptions.length; iterator++) {
-            returnTh(contentOptions[iterator])
-        }
-    }
+
     function head()
     {
         const head = 
@@ -49,18 +43,76 @@
 
         return head;
     }
+    function body()
+    {
+
+    }
+    function table()
+    {
+        const variableThead = thead();
+        const variableTbody = tbody();
+        
+        const table = 
+        `<table class="table">`+
+            variableThead +
+            variableTbody +
+        `</table>`;
+
+        return table;        
+    }
+
+    function thead()
+    {
+        const variableTh = th();
+        const thead = 
+        `<thead>` + 
+            variableTh + 
+        `</thead>`;
+
+        return thead;
+    }
+
+    function th()
+    {
+        const th = `<th class="th">Oi</th>`;
+        
+        return th;
+    }
+
+    function tbody()
+    {
+        const variableTd = td();
+        const tbody = 
+        `<tbody>`+
+            td() +
+        `</tbody>`;
+
+        return tbody;
+    }
+
+    function td()
+    {
+        const td = `<td class="td">interresante</td>`;
+
+        return td;
+    }
+
+    function footer()
+    {
+        const footer = 
+        `<footer></footer>`;
+
+        return footer;
+    }
+
     function returnTh(contentTh)
     {
         const variableHead = head();
+        const variableTable = table();
+        const variableFooter = footer();
         return document.write(
-        variableHead+    
-        `<table class="table">
-            <thead>
-                <th class="th">`+contentTh+`</th>
-                <th>`+contentTh+`</th>
-                <th>`+contentTh+`</th>
-            </thead>
-        </table>`
+            variableHead +     
+            variableTable
         );
     }
     
