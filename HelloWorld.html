@@ -63,20 +63,28 @@
 
     function thead()
     {
-        const variableTh = th();
         const thead = 
         `<thead>` + 
-            variableTh + 
+            generateThs() + 
         `</thead>`;
 
         return thead;
     }
-
-    function th()
+    function generateThs()
     {
-        const th = `<th class="th">Oi</th>`;
+        const contentThs = ['primeiro th','segundo th', 'terceiro th']; 
+        let Ths = ``;
+
+        return th(Ths, contentThs, contentThs.length);
+    }
+
+    function th(Ths, contentThs, length)
+    {
+        Ths +=`<td class="th">`+contentThs[contentThs.length-length]+`</th>`;
         
-        return th;
+        if(length == 1) return Ths;
+        
+        return th(Ths, contentThs, length-1);
     }
 
     function tbody()
@@ -96,7 +104,7 @@
 
         return td(Tds, contentTds, contentTds.length);
     }
-    
+
     function td(Tds, contentTds, length)
     {
         Tds +=`<td class="td">`+contentTds[contentTds.length-length]+`</td>`;
@@ -120,6 +128,7 @@
         const variableHead = head();
         const variableTable = table();
         const variableFooter = footer();
+        
         return document.write(
             variableHead +     
             variableTable
