@@ -17,7 +17,7 @@
         <tbody>
             <td class="td">^</td>
             <td class="td">`Posição do começo da linha`</td>
-            <td class="td" onclick="returnTable('coloque isso')">Código</td>
+            <td class="td" onclick="returnTable(3,3)">Código</td>
             <td class="td">"sei lá</td>
         </tbody>
     </table>
@@ -60,7 +60,7 @@
         
         returnTable(colunas, lines);
     }
-    function table()
+    function table(colunas, lines)
     {
         const ExampleThs = ['primeiro th','segundo th', 'terceiro th'];
         const ExampleTds =  ['primeiro td','segundo td', 'terceiro td'];
@@ -140,10 +140,10 @@
         return footer;
     }
 
-    function returnTable(contentTh)
+    function returnTable(colunas, lines)
     {
         const variableHead = head();
-        const variableTable = table();
+        const variableTable = table(colunas, lines);
         const variableFooter = footer();
         
         return document.write(
