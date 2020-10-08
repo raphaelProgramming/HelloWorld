@@ -21,6 +21,8 @@
             <td class="td">"sei lá</td>
         </tbody>
     </table>
+    <input type="text" placeholder="Escreva o número de colunas" /><br /><br />
+    <input type="text" placeholder="Escreva o número de linhas" /><br />
 </body>
 </html>
 
@@ -49,8 +51,9 @@
     }
     function table()
     {
+        const ExampleTds =  ['primeiro td','segundo td', 'terceiro td'];
         const variableThead = thead();
-        const variableTbody = tbody();
+        const variableTbody = tbody(ExampleTds);
         
         const table = 
         `<table class="table">`+
@@ -63,16 +66,17 @@
 
     function thead()
     {
+        const ExampleThs = ['primeiro th','segundo th', 'terceiro th'];
         const thead = 
         `<thead>` + 
-            generateThs() + 
+            generateThs(ExampleThs) + 
         `</thead>`;
 
         return thead;
     }
-    function generateThs()
+    function generateThs(ExampleThs)
     {
-        const contentThs = ['primeiro th','segundo th', 'terceiro th']; 
+        const contentThs = ExampleThs;
         let Ths = ``;
 
         return th(Ths, contentThs, contentThs.length);
@@ -87,10 +91,9 @@
         return th(Ths, contentThs, length-1);
     }
 
-    function tbody()
+    function tbody(ExampleTds)
     {
         //const variableTd = td();
-        const ExampleTds =  ['primeiro td','segundo td', 'terceiro td'];
         const tbody = 
         `<tbody>`+
             generateTds(ExampleTds) +
