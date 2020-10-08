@@ -90,16 +90,18 @@
     function tbody()
     {
         //const variableTd = td();
+        const ExampleTds =  ['primeiro td','segundo td', 'terceiro td'];
         const tbody = 
         `<tbody>`+
-            generateTds() +
+            generateTds(ExampleTds) +
         `</tbody>`;
 
         return tbody;
     }
-    function generateTds()
+    
+    function generateTds(ExampleTds)
     {
-        const contentTds = ['primeiro td','segundo td', 'terceiro td']; 
+        const contentTds = ExampleTds;
         let Tds = ``;
 
         return td(Tds, contentTds, contentTds.length);
