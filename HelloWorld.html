@@ -21,8 +21,11 @@
             <td class="td">"sei lá</td>
         </tbody>
     </table>
-    <input type="text" placeholder="Escreva o número de colunas" /><br /><br />
-    <input type="text" placeholder="Escreva o número de linhas" /><br />
+    <br /><br />
+    <h1>Generate table</h1>
+    Colunas: <input type="text" id="colunas" name="colunas" placeholder="Number of colunas" /><br /><br />
+    Linhas: <input type="text" id="lines" name="lines" placeholder="Number of lines" /><br /><br />
+    <button id="gera" onclick="gerar()">Gerar table</button>
 </body>
 </html>
 
@@ -49,10 +52,20 @@
     {
 
     }
+    function gerar() 
+    {
+        
+        var colunas = document.querySelector('input[name="colunas"]').value;
+        var lines = document.querySelector('input[name="lines"]').value;
+        
+        returnTh();
+    }
     function table()
     {
+        const ExampleThs = ['primeiro th','segundo th', 'terceiro th'];
         const ExampleTds =  ['primeiro td','segundo td', 'terceiro td'];
-        const variableThead = thead();
+        
+        const variableThead = thead(ExampleThs);
         const variableTbody = tbody(ExampleTds);
         
         const table = 
@@ -64,9 +77,8 @@
         return table;        
     }
 
-    function thead()
+    function thead(ExampleThs)
     {
-        const ExampleThs = ['primeiro th','segundo th', 'terceiro th'];
         const thead = 
         `<thead>` + 
             generateThs(ExampleThs) + 
