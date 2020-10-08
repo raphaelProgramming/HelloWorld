@@ -62,8 +62,8 @@
     }
     function table(colunas, lines)
     {
-        const ExampleThs = ['primeiro th','segundo th', 'terceiro th'];
-        const ExampleTds =  ['primeiro td','segundo td', 'terceiro td'];
+        const ExampleThs = generateThsContent(colunas);
+        const ExampleTds = generateTdsContent(lines);
         
         const variableThead = thead(ExampleThs);
         const variableTbody = tbody(ExampleTds);
@@ -76,7 +76,24 @@
 
         return table;        
     }
-
+    function generateThsContent(numberColunas)
+    {
+        let elements = [];
+        for (let iColunas = 0; iColunas < numberColunas; iColunas++) {
+            elements.push((iColunas + 1) + " coluna(s)");
+        }
+        console.log(elements);
+        return elements;
+    }
+    function generateTdsContent(numberLines)
+    {
+        let elements = [];
+        for (let iLines = 0; iLines < numberLines; iLines++) {
+            elements.push((iLines + 1) + " lines(s)");
+        }
+        console.log(elements);
+        return elements;
+    }
     function thead(ExampleThs)
     {
         const thead = 
