@@ -17,7 +17,7 @@
         <tbody>
             <td class="td">^</td>
             <td class="td">`Posição do começo da linha`</td>
-            <td class="td" onclick="returnTh('coloque isso')">Código</td>
+            <td class="td" onclick="returnTable('coloque isso')">Código</td>
             <td class="td">"sei lá</td>
         </tbody>
     </table>
@@ -58,7 +58,7 @@
         var colunas = document.querySelector('input[name="colunas"]').value;
         var lines = document.querySelector('input[name="lines"]').value;
         
-        returnTh();
+        returnTable(colunas, lines);
     }
     function table()
     {
@@ -140,7 +140,7 @@
         return footer;
     }
 
-    function returnTh(contentTh)
+    function returnTable(contentTh)
     {
         const variableHead = head();
         const variableTable = table();
